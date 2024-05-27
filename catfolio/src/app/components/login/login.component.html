@@ -1,13 +1,24 @@
-<div class="container">
-    <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+<div class="container d-flex align-items-center bg-primary">
+    <img src="https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNhdHN8ZW58MHx8MHx8fDA%3D"
+        width="300px" class="img-left">
+    <div class="container">
+        <h1 class="text-center">Bem vindos!</h1>
+        <form class="row g-3 ms-3">
+            <div class="col-12">
+                <label for="staticEmail2" class="visually-hidden">Email</label>
+                <input type="text" class="form-control mb-3" id="staticEmail2" [(ngModel)]="login"
+                    [ngModelOptions]="{standalone: true}" placeholder="email@example.com">
+            </div>
+            <div class="col-12">
+                <label for="inputPassword2" class="visually-hidden">Password</label>
+                <input type="password" class="form-control" id="inputPassword2" [(ngModel)]="senha"
+                    [ngModelOptions]="{standalone: true}" placeholder="Password">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-dark mb-3" (click)="logar()">Confirm identity</button>
+            </div>
+        </form>
     </div>
 
-    <label for="inputPassword5" class="form-label">Password</label>
-    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock">
-    <div id="passwordHelpBlock" class="form-text">
-        Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special
-        characters, or emoji.
-    </div>
+
 </div>
