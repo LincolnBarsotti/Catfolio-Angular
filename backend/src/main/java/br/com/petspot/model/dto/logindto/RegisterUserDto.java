@@ -13,10 +13,8 @@ public record RegisterUserDto(
         , message = "Senha fora de padrão!")
         String senha,
         @NotBlank
-        @Size(min = 2, max = 18)
         String nome,
         @NotBlank
-        @Size(min = 2, max = 18)
         String sobrenome,
         @NotBlank
         String dataDeNascimento

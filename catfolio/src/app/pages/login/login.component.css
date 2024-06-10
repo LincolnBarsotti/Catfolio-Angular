@@ -1,0 +1,19 @@
+.login-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  .login-form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .login-form form {
+    width: 100%;
+    max-width: 400px;
+  }
+  .login-image {
+    flex: 1;
+    background: url('https://artbreeder.b-cdn.net/imgs/bc8add9818216e50915f2fda9f93.jpeg') no-repeat center center;
+    background-size: cover;
+  }
