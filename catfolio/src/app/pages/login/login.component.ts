@@ -1,12 +1,38 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [HttpClientModule, FormsModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  // https://artbreeder.b-cdn.net/imgs/14f37792a81ae0df3aca06cf987f.jpeg
+  r: string = 'http://localhost:8080/login';
+  loginObj: Login;
+
+  constructor(private http: HttpClient, private router: Router) {
+    this.loginObj = new Login();
+  }
+
+  onLogin() {
+    this.http.post(this.r, this.loginObj).subscribe((res:any) => {
+      if(res.email){
+        alert('Login realizado com sucesso');
+        this.router.navigateByUrl('/dashboard'); 
+      }
+    });
+  }
+}
+
+export class Login {
+  email: string;
+  senha: string;
+  constructor() {
+    this.email = '';
+    this.senha = '';
+  }
 }

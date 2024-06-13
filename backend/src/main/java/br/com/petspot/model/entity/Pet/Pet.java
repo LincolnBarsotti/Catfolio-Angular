@@ -42,7 +42,7 @@ public class Pet {
     public Pet(RegisterPetDto petDto) {
         this.petName = petDto.nome();
 
-        this.specie = petDto.especie();
+        this.specie = "Felino";
 
         if (petDto.genero() != null) {
             this.gender = petDto.genero();
