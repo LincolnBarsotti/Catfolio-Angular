@@ -1,6 +1,7 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ export class RegisterComponent{
   r: string = 'http://localhost:8080/register';
   registroForm: FormGroup;
 
-  constructor(private http: HttpClient, private fb: FormBuilder) {
+  constructor(private http: HttpClient, private fb: FormBuilder, private router: Router) {
     this.registroForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       senha: ['', [Validators.required, Validators.minLength(6)]],
@@ -31,6 +32,7 @@ export class RegisterComponent{
       this.http.post(this.r, this.registroForm.value).subscribe((res: any) => {
         if (res.email) {
           alert("Registro feito com sucesso")
+          this.router.navigateByUrl('/dashboard');
         }
           
       });
