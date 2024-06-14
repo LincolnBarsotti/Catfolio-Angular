@@ -32,6 +32,7 @@ export class RegisterComponent{
       this.http.post(this.r, this.registroForm.value).subscribe((res: any) => {
         if (res.email) {
           alert("Registro feito com sucesso")
+          
           this.router.navigateByUrl('/dashboard');
         }
           
