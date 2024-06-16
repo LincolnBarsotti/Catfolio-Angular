@@ -1,0 +1,8 @@
+.card {
+    max-width: 500px;
+    margin: auto;
+  }
+  .cat-image {
+    max-height: 250px;
+    object-fit: cover;
+  }
