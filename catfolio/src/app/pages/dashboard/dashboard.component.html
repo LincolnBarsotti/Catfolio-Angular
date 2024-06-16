@@ -4,22 +4,22 @@
           <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0fGVufDB8fDB8fHww" class="card-img-top cat-image" alt="Foto do gato">
           <div class="card-body">
             <h5 class="card-title">Cadastro de Felino</h5>
-            <form>
+            <form (ngSubmit)="onSubmit()">
               <div class="mb-3">
                 <label for="nome" class="form-label">Nome</label>
-                <input type="text" class="form-control" id="nome" placeholder="Nome do felino">
+                <input type="text" class="form-control" id="nome" [(ngModel)]="petObj.nome" name="nome" placeholder="Nome do felino" required>
               </div>
               <div class="mb-3">
                 <label for="raca" class="form-label">Raça</label>
-                <input type="text" class="form-control" id="raca" placeholder="Raça do felino">
+                <input type="text" class="form-control" id="raca" [(ngModel)]="petObj.raca" name="raca" placeholder="Raça do felino" required>
               </div>
               <div class="mb-3">
-                <label for="idade" class="form-label">Idade</label>
-                <input type="number" class="form-control" id="idade" placeholder="Idade do felino">
+                <label for="dataDeNascimento" class="form-label">Data de Nascimento</label>
+                <input type="date" class="form-control" id="dataDeNascimento" [(ngModel)]="petObj.dataDeNascimento" name="dataDeNascimento" required>
               </div>
               <button type="submit" class="btn btn-primary">Registrar Pet</button>
             </form>
           </div>
         </div>
-      </div>
+      </div>      
 </div>

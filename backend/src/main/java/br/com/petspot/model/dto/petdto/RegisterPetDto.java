@@ -9,10 +9,7 @@ import java.util.Date;
 public record RegisterPetDto(
         @NotBlank
         String nome,
-        String especie,
-        Integer genero,
         String raca,
-        String peso,
         String dataDeNascimento
 ) {
         public Date getDate() {

@@ -44,14 +44,8 @@ public class Pet {
 
         this.specie = "Felino";
 
-        if (petDto.genero() != null) {
-            this.gender = petDto.genero();
-        }
         if (petDto.dataDeNascimento() != null) {
             this.petBirthday = petDto.getDate();
-        }
-        if (petDto.peso() != null) {
-            this.petWeight = petDto.peso();
         }
         if (petDto.raca() != null) {
             this.race = petDto.raca();
