@@ -1,17 +1,19 @@
-
 <div class="login-container">
   <div class="login-form">
     <form (ngSubmit)="onLogin()">
       <h2>Login</h2>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" id="email" [(ngModel)]="loginObj.email" name="email" class="form-control" >
+        <input type="email" id="email" [(ngModel)]="loginObj.email" name="email" class="form-control">
       </div>
       <div class="form-group">
         <label for="senha">Senha</label>
-        <input type="password" id="senha" [(ngModel)]="loginObj.senha" name="senha" class="form-control" >
+        <input type="password" id="senha" [(ngModel)]="loginObj.senha" name="senha" class="form-control">
       </div>
+      <br>
       <button type="submit" class="btn btn-primary">Login</button>
+      <br>
+      <a href="/register">Registre-se</a>
     </form>
   </div>
   <div class="login-image"></div>

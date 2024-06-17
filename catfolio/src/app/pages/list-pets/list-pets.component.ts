@@ -26,7 +26,7 @@ export class ListPetsComponent implements OnInit{
     this.http.get(this.url).subscribe((res: any) => {
       if (res.page && res.page.content) {
         this.content = res.page.content;
-        console.log('Content:', this.content); // Verifique o conteúdo extraído
+        console.log('Content:', this.content);
         if (this.content.length > 0) {
           alert('Content loaded successfully');
         } else {
