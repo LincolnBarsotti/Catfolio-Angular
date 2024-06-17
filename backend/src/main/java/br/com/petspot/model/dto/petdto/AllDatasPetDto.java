@@ -8,18 +8,14 @@ public record
 AllDatasPetDto(
         String id,
         String nome,
-        String peso,
         Date nascimento,
-        String especie,
-        String raca,
-        Integer genero
+        String raca
 
 ) {
     public AllDatasPetDto(Pet pet){
         this(
-                pet.getId(), pet.getPetName(), pet.getPetWeight(),
-                pet.getPetBirthday(), pet.getSpecie(), pet.getRace(),
-                pet.getGender()
+                pet.getId(), pet.getPetName(),
+                pet.getPetBirthday(), pet.getRace()
                 );
     }
 }

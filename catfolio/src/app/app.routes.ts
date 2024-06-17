@@ -3,6 +3,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ListPetsComponent } from './pages/list-pets/list-pets.component';
 
 export const routes: Routes = [
     {
@@ -19,6 +20,10 @@ export const routes: Routes = [
             {
                 path:'dashboard',
                 component:DashboardComponent
+            },
+            {
+                path:'list-pet',
+                component:ListPetsComponent
             }
         ]
     }

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [HttpClientModule, FormsModule],
+  imports: [HttpClientModule, FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -21,6 +22,7 @@ export class LoginComponent {
   onLogin() {
     this.http.post(this.r, this.loginObj).subscribe((res:any) => {
       if(res.email){
+        localStorage.setItem('idUser', res.id);
         alert('Login realizado com sucesso');
         this.router.navigateByUrl('/dashboard'); 
       }

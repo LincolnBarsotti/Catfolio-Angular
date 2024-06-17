@@ -13,7 +13,7 @@ public record RegisterPetDto(
         String dataDeNascimento
 ) {
         public Date getDate() {
-                SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+                SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
 
                 try {
                         return format.parse(dataDeNascimento);

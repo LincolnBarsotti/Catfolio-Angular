@@ -29,7 +29,7 @@ public class LoginService {
 
         if (auth != null){
 //            sendEmail.sendLoginEmail(auth.getEmail(), auth.getPetOwner().getName());
-            return ResponseEntity.ok(new MessageWithEmail(loginDto.email(), "Usuário logado"));
+            return ResponseEntity.ok(new MessageWithEmail(loginDto.email(), auth.getPetOwner().getId(), "Usuário logado"));
         }
 
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new MessageWithEmail("Credenciais inválidas!"));
@@ -52,7 +52,7 @@ public class LoginService {
 
 //        sendEmail.sendRegisterEmail(login.getEmail(), petOwner.getName());
 
-        return ResponseEntity.created(uri).body(new MessageWithEmail(login.getEmail(), "Registro concluído"));
+        return ResponseEntity.created(uri).body(new MessageWithEmail(login.getEmail(), login.getPetOwner().getId(),"Registro concluído"));
     }
 
     public ResponseEntity<MessageWithEmail> requestNewPassword(String email){
